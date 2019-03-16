@@ -1,0 +1,81 @@
+---
+#
+# Copyright 2017 Intel Corporation
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom
+# the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+# THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# Authour: Pushpendra Kumar (pushpendra.kumar@intel.com)
+# Intel Corporation
+#
+
+
+# tasks file for nginx
+
+  - name: Legal message
+    debug:
+      msg: "This script will install third party components licensed under various open source licenses onto your system/device/server. The terms under which those components may be used and distributed can be found with the license document that is provided with those components. Please familiarize yourself with those terms to ensure your distribution of those components complies with the terms of those licenses."  
+
+  - name: Include nginx dependencies for RedHat/CentOS
+    include: centos_rhel_dep.yml
+    when: ansible_distribution in ['RedHat', 'CentOS']
+
+  - name: Including nginx dependencies for Debian 
+    include: debian_dependencies.yml
+    when: ansible_os_family == "Debian"
+
+
+  - name: cloning NGINX from github
+    git:
+      repo: "{{ nginx_git_url }}"
+      dest: "/opt/nginx"
+      update: yes
+      version: "{{ nginx_version }}"
+    register: nginx_source
+   
+  - name: Cloning nginx-rtmp-module
+    git:
+      repo: "{{ nginx_rtmp_git_url }}"
+      dest: "{{ ngins_rtmp_dir }}"
+      update: yes
+      force: yes
+
+
+  - name: Compiling and installing nginx with rtmp
+    shell: "{{ item }}"
+    args:
+      chdir: "{{ nginx_install_dir }}"
+    with_items:
+      - auto/configure {{ nginx_custom_modules }} --add-module=../nginx-rtmp-module
+      - make -j$(nproc)
+      - make -j$(nproc) install
+
+
+  - name: Copying NGINX conf file
+    become: yes
+    template:
+      src: nginx.conf.tpl
+      dest: "{{ nginx_conf_path }}"
+      mode: 0644
+      
+  - name: Create self-signed certificate
+    command: >
+      openssl req -x509 -nodes -subj '/CN={{ hostname }}' -days 365
+      -newkey rsa:4096 -sha256 -keyout {{ item.key }} -out {{ item.cert }}
+      creates={{ item.cert }}
+    with_items: "{{ self_signed_certs }}"

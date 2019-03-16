@@ -1,0 +1,69 @@
+---
+#
+# Copyright 2017 Intel Corporation
+#
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"),
+# to deal in the Software without restriction, including without limitation
+# the rights to use, copy, modify, merge, publish, distribute, sublicense,
+# and/or sell copies of the Software, and to permit persons to whom
+# the Software is furnished to do so, subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+# IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+# DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+# TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH
+# THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# Authour: Pushpendra Kumar (pushpendra.kumar@intel.com)
+# Intel Corporation
+#
+
+
+# tasks file for svt
+
+  - name: Legal message
+    debug:
+      msg: "This script will install third party components licensed under various open source licenses onto your system/device/server. The terms under which those components may be used and distributed can be found with the license document that is provided with those components. Please familiarize yourself with those terms to ensure your distribution of those components complies with the terms of those licenses."  
+
+
+  - name: Include SVT_HEVC dependencies for RedHat
+    include: rhel_dependencies.yml
+    when: ansible_distribution == "RedHat"
+
+
+  - name: Include SVT-HEVC dependencies for CentOS
+    include: centos_dependencies.yml
+    when: ansible_distribution == "CentOS"
+
+
+  - name: Include SVT-HEVC dependencies for Debian
+    include: debian_dependencies.yml
+    when: ansible_os_family == "Debian"
+
+
+  - name: Cloning SVT-HEVC from github
+    git:
+      repo: "{{ svt_git_url }}"
+      dest: "{{ svt_install_dir }}"
+      update: yes
+      force: yes
+    register: svt_source
+
+
+  - name: Build the SVT-HEVC
+    shell: "{{ item }}"
+    args:
+      chdir: "{{ svt_source_build }}"
+    with_items:
+     # - source /opt/rh/devtoolset-7/enable
+      - ./build.sh
+
+
+
+

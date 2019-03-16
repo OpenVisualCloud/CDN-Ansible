@@ -1,0 +1,37 @@
+# Edit the IPs and credential of hosts in the below groups,
+# you can add any numbers of hosts IP.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+
+
+# A collection of hosts belonging to the 'trafficservers' group
+
+[trafficservers]
+#10.xxx.xxx.xxx ansible_ssh_user=xxx ansible_ssh_pass=xxx
+#1.2.3.4 ansible_ssh_user=username ansible_ssh_pass=password
+
+# A collection of hosts belonging to the 'ffmpeg_servers' group
+
+[ffmpeg_servers]
+#10.xxx.xxx.xxx ansible_ssh_user=xxx ansible_ssh_pass=xxx
+#1.2.3.4 ansible_ssh_user=username ansible_ssh_pass=password
+
+# A collection of hosts belonging to the 'nginx_servers' group
+
+[nginx_servers]
+#10.xxx.xxx.xxx ansible_ssh_user=xxx ansible_ssh_pass=xxx
+#localhost ansible_ssh_user=xxx ansible_ssh_pass=xxx
+#1.2.3.4 ansible_ssh_user=username ansible_ssh_pass=password
+
+# A collection of hosts belonging to the 'svt_servers' group
+
+[svt_servers]
+#10.xxx.xxx.xxx ansible_ssh_user=xxx ansible_ssh_pass=xxx
+#1.2.3.4 ansible_ssh_user=username ansible_ssh_pass=password
