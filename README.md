@@ -8,7 +8,7 @@
 
  
   > Require Ansible 2.4 or newer \
-  > Expects NFVi-BKC Ubuntu-16.04 or Ubuntu-18.04, CentOS-7.6 and RHEL-7.6 hosts
+  > Expects NFVi-BKC Ubuntu-16.04 or Ubuntu-18.04, CentOS-7.6 and RHEL-7.6 hosts \
   > Package will detect the respective Operating System and install the CDN components
 
 
