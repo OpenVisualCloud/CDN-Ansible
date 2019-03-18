@@ -2,8 +2,7 @@
  
   Content Delivery Network are growing in importance are being viewed as new class of CPSs.
   The objective of this project is to share an optimize recipe and a CDN reference solution
-  based on open source frameworks. This is based on SKL-Purley platform and is a pre cursor
-  to upcoming launch of Intel Select Solution for CDN on Cascade Lake platform.
+  based on open source frameworks. This release is for Intel Select Solution for Visual Cloud Content Delivery on Cascade Lake platform.
 
 
  
