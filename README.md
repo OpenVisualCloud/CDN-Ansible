@@ -15,9 +15,9 @@
     `ffmpeg` (n4.0.3), `nginx` (version 1.14.0)+ `rtmp-module` and `SVT` (v1.2.0). 
 
  2. To use CDN components, first edit `group_vars/all` (hostname of nginx node for creating ssl 
-    certificate and proxy environment). This can also be done by:
-
-    Please set following environment variables-
+    certificate and proxy environment). This can also be done by following if your targets and control machines are in same environment.
+    
+    Set the following environment variables-
   ```
      $ export CDN_DIR="Enter the path of CDN directory"
      $ export http_proxy="Enter the http_proxy"
@@ -26,6 +26,7 @@
 
      $ printf "proxy_env\n http_proxy=\"$http_proxy\"\n https_proxy=\"$https_proxy\"\n\nhostname=\"$hostname\"\n" | sudo tee $CDN_PATH/group_vars/all
   ```     
+  You can also use `lookup` plugins like `lookup('env', 'http_proxy')` for more detail please checkout Ansible document.
 
  3. Also edit the `inventory` file that contains the hostnames/IPs and login credential of 
     the machines on which you want these components to install.
