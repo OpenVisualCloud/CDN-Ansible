@@ -1,22 +1,26 @@
 galaxy_info:
-  author: Amruta Misra, Pushpendra Kumar
-  description: Scalable Video Technology for HEVC Encoder (SVT-HEVC Encoder)
+  author: Pushpendra Kumar, Amruta Misra
+  description: SVT-HEVC installation for Ubuntu, CentOS and RedHat
   company: Intel Corporation
+  licence: BSD 3-Clause
+  min_ansible_version: 2.4
+  platforms:
+  - name: Ubuntu
+    versions:
+    - 16.04
+    - 18.04
+  - name: CentOS
+    versions:
+    - 7.6
+  - name: RedHat
+    versions:
+    - 7.6
+
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
   # issue_tracker_url: http://example.com/issue/tracker
 
-  # Some suggested licenses:
-  # - BSD (default)
-  # - MIT
-  # - GPLv2
-  # - GPLv3
-  # - Apache
-  # - CC-BY
-  license: license (GPLv2, CC-BY, etc)
-
-  min_ansible_version: 2.4
 
   # If this a Container Enabled role, provide the minimum Ansible Container version.
   # min_ansible_container_version:
@@ -29,23 +33,6 @@ galaxy_info:
   # (usually master) will be used.
   #github_branch:
 
-  #
-  # Provide a list of supported platforms, and for each platform a list of versions.
-  # If you don't wish to enumerate all versions for a particular platform, use 'all'.
-  # To view available platforms and versions (or releases), visit:
-  # https://galaxy.ansible.com/api/v1/platforms/
-  #
-  # platforms:
-  # - name: NFVi-BKC (Ubuntu-16.04)
-  #   versions:
-  #   - all
-  #   - 25
-  # - name: RedHat/CentOS
-  #   versions:
-  #   - all
-  #   - 7.0
-  #   - 7.6
-  #   - 99.99
 
   galaxy_tags: []
     # List tags for your role here, one per line. A tag is a keyword that describes
@@ -58,3 +45,4 @@ galaxy_info:
 dependencies: []
   # List your role dependencies here, one per line. Be sure to remove the '[]' above,
   # if you add dependencies to this list.
+
