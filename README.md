@@ -1,4 +1,4 @@
-## Content Delivery Network (CDN):
+## Visual Cloud Delivery Network
  
   Content Delivery Network are growing in importance are being viewed as new class of CPSs.
   The objective of this project is to share an optimize recipe and a CDN reference solution
@@ -11,8 +11,8 @@
   > Package will detect the respective Operating System and install the CDN components
 
 
- 1. These playbooks deploy a implementation of various components of CDN such as `ATS` (version 7.1.5),
-    `ffmpeg` (n4.0.3), `nginx` (version 1.14.0)+ `rtmp-module` and `SVT` (v1.2.0). 
+ 1. These playbooks deploy a implementation of various components of VCDN such as `Apache Traffic Server: Web Server`,
+    `FFmpeg: Video encode, decode, transcode framework`, `NGINX: Web Server` and `SVT: Scalable Video Technology for HEVC encode. 
 
  2. To use CDN components, first edit `group_vars/all` (hostname of nginx node for creating ssl 
     certificate and proxy environment). This can also be done by following if your targets and control machines are in same environment.
@@ -110,10 +110,10 @@
 
 
 
- ## ROLES: CDN Components
+ ## Visual Cloud Delivery Network Components
 
 
-  ### Apache traffic Server (ATS)
+  ### Apache traffic Server: Web Server
 
   Apache Traffic Server is a high-performance web proxy cache that improves network efficiency and 
   performance by caching frequently-accessed information at the edge of the network. This role install 
@@ -142,7 +142,7 @@
   template directory contains the config files that will be copied to target machines
 
 
-  ### NGINX
+  ### NGINX: Web Server
 
   NGINX is server for web serving, media streaming. In addition to its HTTP and HTTPS server capabilities. 
   **nginx+rtmp-module** Media streaming, http and https. This role install and configure the nginx+rtmp-module 
@@ -171,7 +171,7 @@
   template directory contains the conf file that will be copied to target machines
 
 
-  ### FFMPeg
+  ### FFmpeg: Web Server
 
   FFmpeg is a command line tool for video and audio transcoding for both live and static content.
   This role install and configure the ffmpeg from source.
@@ -202,7 +202,7 @@
     $ man ffmpeg 
   ```
 
-  ### Scalabale Video Transcode(SVT)
+  ### SVT: Scalabale Video Technology for HEVC encoder
 
   The Scalable Video Technology for HEVC Encoder (SVT-HEVC Encoder) is an HEVC-compliant encoder library core 
   that achieves excellent density-quality tradeoffs, and is highly optimized for Intel Xeon  Scalable 
