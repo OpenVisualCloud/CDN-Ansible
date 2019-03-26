@@ -4,15 +4,19 @@
   The objective of this project is to share an optimize recipe and a CDN reference solution
   based on open source frameworks. This release is for Intel Select Solution for Visual Cloud Content Delivery on Cascade Lake platform.
 
-### Requirements
+## LICENSE
+
+  Visual Cloud Delivery Network is license under BSD 3-Clouse. See [LICENSE](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE) for more details.
+
+## Documentation
+
+  More detail about the Visual Cloud Delivery Network can be found here [CDN User Guide](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/Docs/CDN_Release_1.0_UserGuide.pdf).
+
+## Requirements
  
   > Require Ansible 2.4 or newer \
   > Expects NFVi-BKC Ubuntu-16.04 or Ubuntu-18.04, CentOS-7.6 and RHEL-7.6 hosts \
   > Package will detect the respective Operating System and install the CDN components
-
-### License
-
-  Visual Cloud Delivery Network is license under BSD 3-Clouse. See [LICENSE](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE) for more details.
 
 
  1. These playbooks deploy a implementation of various components of VCDN such as `Apache Traffic Server: Web Server`,
