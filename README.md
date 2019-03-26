@@ -10,7 +10,7 @@
 
 ## Documentation
 
-  More detail about the Visual Cloud Delivery Network can be found here [CDN User Guide](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/Docs/CDN_Release_1.0_UserGuide.pdf).
+  More detail about the Visual Cloud Delivery Network can be found here [CDN User Guide](https://01.org/visual-cloud-reference-solution-for-cdn/documentation-list).
 
 ## Requirements
  
