@@ -4,18 +4,23 @@
   The objective of this project is to share an optimize recipe and a CDN reference solution
   based on open source frameworks. This release is for Intel Select Solution for Visual Cloud Content Delivery on Cascade Lake platform.
 
-
+### Requirements
  
   > Require Ansible 2.4 or newer \
   > Expects NFVi-BKC Ubuntu-16.04 or Ubuntu-18.04, CentOS-7.6 and RHEL-7.6 hosts \
   > Package will detect the respective Operating System and install the CDN components
+
+### License
+
+  Visual Cloud Delivery Network is license under BSD 3-Clouse. See [LICENSE](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE) for more details.
 
 
  1. These playbooks deploy a implementation of various components of VCDN such as `Apache Traffic Server: Web Server`,
     `FFmpeg: Video encode, decode, transcode framework`, `NGINX: Web Server` and `SVT: Scalable Video Technology for HEVC encode. 
 
  2. To use CDN components, first edit `group_vars/all` (hostname of nginx node for creating ssl 
-    certificate and proxy environment). This can also be done by following if your targets and control machines are in same environment.
+    certificate and proxy environment).  You can also use `lookup` plugins like `lookup('env', 'http_proxy')` for more detail please checkout Ansible document. 
+    This can also be done by following if your targets and control machines are in same environment.
     
     Set the following environment variables-
   ```
@@ -26,7 +31,6 @@
 
      $ printf "proxy_env\n http_proxy=\"$http_proxy\"\n https_proxy=\"$https_proxy\"\n\nhostname=\"$hostname\"\n" | sudo tee $CDN_PATH/group_vars/all
   ```     
-  You can also use `lookup` plugins like `lookup('env', 'http_proxy')` for more detail please checkout Ansible document.
 
  3. Also edit the `inventory` file that contains the hostnames/IPs and login credential of 
     the machines on which you want these components to install.
