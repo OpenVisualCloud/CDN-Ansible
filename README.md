@@ -4,13 +4,13 @@
   The objective of this project is to share an optimize recipe and a CDN reference solution
   based on open source frameworks. This release is for Intel Select Solution for Visual Cloud Content Delivery on Cascade Lake platform.
 
-## LICENSE
+## License
 
   Visual Cloud Delivery Network is license under BSD 3-Clouse. See [LICENSE](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE) for more details.
 
 ## Documentation
 
-  More detail about the Visual Cloud Delivery Network can be found here [CDN User Guide](https://01.org/visual-cloud-reference-solution-for-cdn/documentation-list).
+  Visual Cloud Delivery Network documentation can be found at the [01.org project page](https://01.org/visual-cloud-reference-solution-for-cdn/documentation-list).
 
 ## Requirements
  
