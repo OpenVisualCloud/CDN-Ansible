@@ -1,4 +1,6 @@
 ## Visual Cloud Delivery Network
+[![License](https://img.shields.io/badge/license-BSD_3_Clause-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE)
+[![Contributions](https://img.shields.io/badge/contributions-welcome-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/wiki)
  
   Content Delivery Network are growing in importance are being viewed as new class of CPSs.
   The objective of this project is to share an optimize recipe and a CDN reference solution
@@ -20,7 +22,7 @@
 
 
  1. These playbooks deploy a implementation of various components of VCDN such as `Apache Traffic Server: Web Server`,
-    `FFmpeg: Video encode, decode, transcode framework`, `NGINX: Web Server` and `SVT: Scalable Video Technology for HEVC encode. 
+    `FFmpeg: Video encode, decode, transcode framework`, `NGINX: Web Server` and `SVT: Scalable Video Technology for HEVC encoder`. 
 
  2. To use CDN components, first edit `group_vars/all` (hostname of nginx node for creating ssl 
     certificate and proxy environment).  You can also use `lookup` plugins like `lookup('env', 'http_proxy')` for more detail please checkout Ansible document. 

@@ -31,8 +31,8 @@
 #Edit the proxy environment
 
 proxy_env:
- http_proxy: "Enter the http_proxy environment of server"
- https_proxy: "Enter the https_proxy environment of server"
+ http_proxy: "Enter the http_proxy environment of target server"
+ https_proxy: "Enter the https_proxy environment of target server"
 
-#Edit the hostname for nginx certificate
+#Edit the hostname or IP for nginx certificate
 hostname: "hostname or IP of nginx server"
