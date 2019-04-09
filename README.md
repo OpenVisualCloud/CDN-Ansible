@@ -1,6 +1,7 @@
 ## Visual Cloud Delivery Network
 [![License](https://img.shields.io/badge/license-BSD_3_Clause-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/wiki)
+[![01.org](https://img.shields.io/badge/01.org-Official-0018F9.svg)](https://01.org/visual-cloud-reference-solution-cdn)
  
   Content Delivery Network are growing in importance are being viewed as new class of CPSs.
   The objective of this project is to share an optimize recipe and a CDN reference solution
