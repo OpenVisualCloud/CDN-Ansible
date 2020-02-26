@@ -36,7 +36,7 @@
     cmake_url: "https://cmake.org/files/v3.13/cmake-3.13.1.tar.gz"
     nasm_url: "http://www.nasm.us/pub/nasm/releasebuilds/2.13.02/nasm-2.13.02.tar.bz2"
     yasm_git_url: "https://github.com/yasm/yasm.git"
-    libx264_git_url: "http://git.videolan.org/git/x264"
+    libx264_git_url: "https://github.com/mirror/x264"
     libx265_git_url: "https://bitbucket.org/multicoreware/x265"
     libfdk_aac_git_url: "https://github.com/mstorsjo/fdk-aac"
     libmp3lame_url: "http://downloads.sourceforge.net/project/lame/lame/3.100/lame-3.100.tar.gz"
