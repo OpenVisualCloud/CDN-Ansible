@@ -1,3 +1,7 @@
+# DISCONTINUATION OF PROJECT #
+This project will no longer be maintained by Intel.
+Intel has ceased development and contributions including, but not limited to, maintenance, bug fixes, new releases, or updates, to this project.
+Intel no longer accepts patches to this project.
 ## Visual Cloud Delivery Network
 [![License](https://img.shields.io/badge/license-BSD_3_Clause-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/blob/master/LICENSE)
 [![Contributions](https://img.shields.io/badge/contributions-welcome-stable.svg)](https://github.com/OpenVisualCloud/CDN-Ansible/wiki)
