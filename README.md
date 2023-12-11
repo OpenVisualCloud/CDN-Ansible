@@ -236,4 +236,3 @@
      $ ffmpeg -i [input.mp4] -nostdin -f rawvideo -pix_fmt yuv420p - | 
        ./HevcEncoderApp -i stdin -n [number_of_frames_to_encode] -w [width] -h [height]
   ```
-
